@@ -2,7 +2,7 @@ import * as B from "./box.js"
 import * as W from "./wrap.js"
 
 /**
- * @template C
+ * @template {object} C
  * @param {C} source
  * @returns {W.Wrap<C>}
  */

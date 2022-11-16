@@ -1,6 +1,6 @@
 # TS Bug report
 
-TS seems to generate invalid typedefs (there is no `B` in the scope)
+TS seems to generate invalid typedefs (there is no `B` in the scope) on incremental builds
 
 ```ts
 export const bug: W.Wrap<{
@@ -36,7 +36,7 @@ When imported `Wrap` is a [Mapped Types](https://www.typescriptlang.org/docs/han
 
 ```ts
 export type Wrap<C> = {
-  [K in keyof C]: K extends string ? { [key in K]: C } : never
+  [K in keyof C]: { wrapped: C[K] }
 }
 ```
 

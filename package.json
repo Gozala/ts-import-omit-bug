@@ -5,6 +5,7 @@
     "typescript": "4.9.3"
   },
   "scripts": {
-    "test": "tsc --build"
+    "build": "tsc --build",
+    "test": "tsc --build && echo \"\\nexport let a = 1\" >> ./src/bug.js && tsc --build"
   }
 }
